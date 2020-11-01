@@ -9,3 +9,4 @@ Clone de um design do dribble chamado Nike E-commerce feito com ReactJs e Styled
 
 ## 💻 Telas
 
+<img src="./desing.png"></img>
