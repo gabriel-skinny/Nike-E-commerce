@@ -1,5 +1,28 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import backgroudImg from "../../assets/background.jpg"
+
+
+
+const show = keyframes`
+  from {
+    scale: 0;
+  }
+
+  to{
+    scale: 1;
+  }
+`;
+
+const came = keyframes`
+  from{
+    transform: translateX(-380px);
+  }
+
+  to{
+    transform: translateX(0px);
+  }
+`;
+
 
 export const Container = styled.div`
   width: 100%;
@@ -24,6 +47,7 @@ export const Content = styled.main`
   align-items: center;
 
   div.middle{
+    animation: ${came} 1s ease-in-out;
 
     h1{
     font-family: 'Anton', sans-serif;
@@ -49,6 +73,7 @@ export const Content = styled.main`
     top: 90px;
     right: 450px;
     z-index: 5;
+    animation: ${show} 1s ease-in-out;
   }
 
   div.footer{
@@ -57,6 +82,7 @@ export const Content = styled.main`
     right: 750px;
     z-index: 1;
     text-align: right;
+    animation: ${show} 1s ease-in-out;
     
     h1{
     font-size: 120px;
@@ -85,6 +111,7 @@ export const Content = styled.main`
   }
 `
 
+
 export const Details = styled.div`
   width: 500px;
   
@@ -96,9 +123,11 @@ export const Details = styled.div`
   img{
     width: 250px;
     margin-left: 170px;
-  }
+    
+}
 
 `
+
 
 export const Footer = styled.footer`
 
@@ -122,7 +151,7 @@ export const Footer = styled.footer`
 
   div.box{
     position: relative;
-    z-index: 3;
+    z-index: 12;
     height: 180px;
     width: 140px;
     padding: 10px 20px;
@@ -134,10 +163,9 @@ export const Footer = styled.footer`
 
     div.svg{
       position: absolute;
-      z-index: 4;
       top: -15px;
       left: 59px;
-
+      z-index: 99;
       height: 30px;
       width: 30px;
       background: #fff;
@@ -147,6 +175,12 @@ export const Footer = styled.footer`
       display: flex;
       justify-content: center;
       align-items: center;
+
+      transition: all 0.4s;
+    
+      &:hover{
+        background: #ccc;
+      }
     }
     
     div.item{
